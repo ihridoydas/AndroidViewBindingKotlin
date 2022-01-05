@@ -26,11 +26,17 @@ class MainActivity : AppCompatActivity() {
             textView.text="Hello I am Hridoy"
             textView2.text="Now Learning View binding"
 
-
+           //includedLayout.fragmentLayout.text="New Writing"
 
             btnClickMe.setOnClickListener{
                 textView.text="Hello Now learn Time"
-                includedLayout.fragmentLayout.text="New Writing"
+
+                val fragment = MainFragment()
+                supportFragmentManager
+                    .beginTransaction()
+                    .add(R.id.fragment_container,fragment)
+                    .commit()
+
                // Toast.makeText(this@MainActivity,"Hello World",Toast.LENGTH_LONG).show()
             }
         }
